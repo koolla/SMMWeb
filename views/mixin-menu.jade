@@ -1,0 +1,29 @@
+mixin menuOfActive(item)
+  - var items = ['setting','dashboard','customer','team']
+  ul.nav.nav-sidebar
+    each val in items
+      if val===item
+        li.active: a(href = '/' + val) #{val}
+      else
+        li: a(href = '/' + val) #{val}
+    //- case item
+    //-   when "dashboard"
+    //-     li: a(href="") setting
+    //-     li.active: a(href="") dashboard
+    //-     li: a customers
+    //-     li: a team
+    //-   when "customer"
+    //-     li: a setting
+    //-     li: a dashboard
+    //-     li.active: a customers
+    //-     li: a team
+    //-   when "team"
+    //-     li: a setting
+    //-     li: a dashboard
+    //-     li: a customers
+    //-     li.team: a team
+    //-   when "setting"
+    //-     li.active: a setting
+    //-     li: a dashboard
+    //-     li: a customers
+    //-     li: a team
