@@ -33,6 +33,7 @@ app.get('/dashboard', routes.dashboard);
 app.get('/customer', routes.customer);
 app.get('/team', routes.team);
 app.get('/setting', routes.setting);
+app.get('/login', routes.login);
 // app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

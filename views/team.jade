@@ -1,5 +1,17 @@
-extends layout
+extends layout-main
 include mixin-menu.jade
 block sidebar
   +menuOfActive('team')
 block content
+  form.form-inline(role="search")
+    .form-group
+      label(class="sr-only" for="search-email") Email address
+      input(type="email" class="form-control" id="search-email" placeholder="Enter email")
+
+    button(type="submit" class="btn btn-default") Search
+  ul.list-group
+    li.list-group-item
+      
+
+block css
+  link(href="css/team.css" rel="stylesheet")

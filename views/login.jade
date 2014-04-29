@@ -1,0 +1,14 @@
+extends layout-login
+block content
+  form(class="form-signin" role="form" action="http://192.168.2.6:3000/signin" method="POST")
+    //- h2.form-signin-heading please sign in
+    input(name="email" type="email" class="form-control" placeholder="Email address" required autofocus)
+    input(name="password" type="password" class="form-control" placeholder="Password" required)
+
+    button(class="btn btn-lg btn-primary btn-block" type="submit") Sign in
+
+block css
+  link(href="/css/login.css" rel="stylesheet")
+
+block js
+  script(src="/js/login.js")

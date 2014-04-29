@@ -1,5 +1,24 @@
-extends layout
+extends layout-main
 include mixin-menu.jade
 block sidebar
   +menuOfActive('customer')
 block content
+  table(class="table table-striped table-customers")
+    thead
+      tr
+        td customer name
+        td status
+        td size
+        td member
+    tbody
+  div.loading-status
+    i.fa.fa-spinner.fa-spin.fa-2x
+  ul
+    li.row
+      
+
+block js
+  script(src="/js/customer.js")
+
+block css
+  link(href="/css/customer.css" rel="stylesheet")

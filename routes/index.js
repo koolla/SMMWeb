@@ -22,3 +22,7 @@ exports.team = function(req, res){
 exports.setting = function(req, res){
   res.render('setting');
 };
+
+exports.login = function(req, res){
+  res.render('login');
+}

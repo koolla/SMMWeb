@@ -1,29 +1,33 @@
 mixin menuOfActive(item)
   - var items = ['setting','dashboard','customer','team']
   ul.nav.nav-sidebar
-    each val in items
-      if val===item
-        li.active: a(href = '/' + val) #{val}
-      else
-        li: a(href = '/' + val) #{val}
-    //- case item
-    //-   when "dashboard"
-    //-     li: a(href="") setting
-    //-     li.active: a(href="") dashboard
-    //-     li: a customers
-    //-     li: a team
-    //-   when "customer"
-    //-     li: a setting
-    //-     li: a dashboard
-    //-     li.active: a customers
-    //-     li: a team
-    //-   when "team"
-    //-     li: a setting
-    //-     li: a dashboard
-    //-     li: a customers
-    //-     li.team: a team
-    //-   when "setting"
-    //-     li.active: a setting
-    //-     li: a dashboard
-    //-     li: a customers
-    //-     li: a team
+    //- each val in items
+    //-   if val===item
+    //-     li.active: a(href = '/' + val) #{val}
+    //-   else
+    //-     li: a(href = '/' + val) #{val}
+    case item
+      when "dashboard"
+        li: a(href="/setting") setting
+        li.active: a(href="/dashboard") dashboard
+          //- ul
+        li.sub-menu: a(href="") weekly
+        li.sub-menu: a(href="") monthly
+        li.sub-menu: a(href="") yearly
+        li: a(href="/customer") customers
+        li: a(href="/team") team
+      when "customer"
+        li: a(href="/setting") setting
+        li: a(href="/dashboard") dashboard
+        li.active: a(href="/customer") customers
+        li: a(href="/team") team
+      when "team"
+        li: a(href="/setting") setting
+        li: a(href="/dashboard") dashboard
+        li: a(href="/customer") customers
+        li.active: a(href="/team") team
+      when "setting"
+        li.active: a(href="/setting") setting
+        li: a(href="/dashboard") dashboard
+        li: a(href="/customer") customers
+        li: a(href="/team") team
